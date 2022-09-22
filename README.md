@@ -19,6 +19,7 @@ You will need to install
 - scikit-learn
 - tensorflow
 - pytorch
+
 in that order -- you can leave the tensorflow/pytorch installation in the background until exercises 2 and 3 if downloads are slow.
 
 All are pip-installable, which you should do either:
@@ -26,7 +27,7 @@ All are pip-installable, which you should do either:
 - via conda
 - via your system installation (`apt-get`, `yum`, `pacman`, etc) (none of these packages are controversial), 
 
-The way that I do it when not using my arch system packages is with virtual environments:
+The way I do it when not using my arch system packages is with virtual environments:
 ```bash
 python -m venv my_venv
 source venv/bin/activate
