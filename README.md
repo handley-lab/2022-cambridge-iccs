@@ -43,6 +43,7 @@ Start the jupyter notebook
 jupyter-notebook training_ml_models.ipynb
 ```
 and select the virtual environment we've just installed
+
 ![Selecting](images/jupyter_venv.jpg)
 
 
