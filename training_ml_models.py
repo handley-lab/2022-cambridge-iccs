@@ -412,13 +412,8 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
 train_dataloader = torch.utils.data.DataLoader(torch.utils.data.TensorDataset(torch.tensor(X_trans_).float(), torch.tensor(y_train_.values).float()), batch_size=32)
 valid_dataloader = torch.utils.data.DataLoader(torch.utils.data.TensorDataset(torch.tensor(X_valid).float(), torch.tensor(y_valid.values).float()), batch_size=32)
 
-#| Very neat package for progress bars
-import tqdm
-
-
 #| The meat of the code -- train! (will discuss)
-pbar = tqdm.tqdm(np.arange(50))
-for _ in pbar:
+for _ in range(50):
 
     sum_train_loss = 0
     for x_batch, y_batch in train_dataloader:
@@ -436,8 +431,8 @@ for _ in pbar:
             loss = loss_fn(pred, y_batch)
             sum_valid_loss += loss.item()
 
-    pbar.set_description("Loss: (%.2f, %.2f)" % (sum_train_loss/len(train_dataloader),
-                                                 sum_valid_loss/len(valid_dataloader)))
+    print("Loss: (%.2f, %.2f)" % (sum_train_loss/len(train_dataloader),
+                                  sum_valid_loss/len(valid_dataloader)))
 
 #| Plot the predictions
 y_pred = model(torch.from_numpy(pipeline.transform(X_test)).float()).detach().numpy()
