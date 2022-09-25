@@ -16,9 +16,11 @@ cd 2022-cambridge-iccs
 # Installation instructions
 You will need to install
 - notebook
+- matplotlib
+- 
 - scikit-learn
 - tensorflow
-- pytorch
+- torch
 
 in that order -- you can leave the tensorflow/pytorch installation in the background until exercises 2 and 3 if downloads are slow.
 
@@ -30,8 +32,8 @@ All are pip-installable, which you should do either:
 The way I do it when not using my arch system packages is with virtual environments:
 ```bash
 python -m venv my_venv
-source venv/bin/activate
-pip install notebook scikit-learn tensorflow pytorch
+source my_venv/bin/activate
+pip install notebook matplotlib scikit-learn tensorflow torch
 python -m ipykernel install --user --name=my_venv
 ```
 The final line tells the jupyter notebook where to look for the virtual environment.
